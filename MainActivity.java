@@ -1,52 +1,155 @@
-package com.example.lab1;
+package com.example.lab2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.graphics.Color;
+import android.text.TextUtils;
 
-public class MainActivity extends AppCompatActivity {
-    int ch=1;
-    float font=30;
+import android.view.View;
+
+import android.view.View.OnClickListener;
+
+import android.widget.Button;
+
+import android.widget.EditText;
+
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity implements OnClickListener
+
+{
+
+//Defining the Views
+
+    EditText Num1;
+
+    EditText Num2;
+
+    Button Add;
+
+    Button Sub;
+
+    Button Mul;
+
+    Button Div;
+
+    TextView Result;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+
+    public void onCreate(Bundle savedInstanceState)
+
+    {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
-        final TextView t=(TextView)findViewById(R.id.Hello);
-        Button btnSize=(Button) findViewById(R.id.button);
-        Button btnColor=(Button) findViewById(R.id.button2);
+//Referring the Views
 
+        Num1 = (EditText) findViewById(R.id.editText1);
 
-        btnSize.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                t.setTextSize(font);
-                font=font+5;
-                if(font==50) font=30;
-            }
-        });
+        Num2 = (EditText) findViewById(R.id.editText2);
 
-        btnColor.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                switch(ch){
-                    case 1: t.setTextColor(Color.RED);break;
-                    case 2: t.setTextColor(Color.GREEN);break;
-                    case 3: t.setTextColor(Color.BLUE);break;
-                    case 4: t.setTextColor(Color.CYAN);break;
-                    case 5: t.setTextColor(Color.YELLOW);break;
-                    case 6: t.setTextColor(Color.MAGENTA);break;
-                }
-                ch++;
-                if(ch==7) ch=1;
+        Add = (Button) findViewById(R.id.Add);
 
-            }
-        });
+        Sub = (Button) findViewById(R.id.Sub);
+
+        Mul = (Button) findViewById(R.id.Mul);
+
+        Div = (Button) findViewById(R.id.Div);
+
+        Result = (TextView) findViewById(R.id.textView);
+
+// set a listener
+
+        Add.setOnClickListener(this);
+
+        Sub.setOnClickListener(this);
+
+        Mul.setOnClickListener(this);
+
+        Div.setOnClickListener(this);
+
     }
+
+    @Override
+
+    public void onClick (View v)
+
+    {
+
+        float num1 = 0;
+
+        float num2 = 0;
+
+        float result = 0;
+
+        String oper = "";
+
+// check if the fields are empty
+
+        if(TextUtils.isEmpty(Num1.getText().toString()) || TextUtils.isEmpty(Num2.getText().toString()))
+
+            return;
+
+// read EditText and fill variables with numbers
+
+        num1 = Float.parseFloat(Num1.getText().toString());
+
+        num2 = Float.parseFloat(Num2.getText().toString());
+
+// defines the button that has been clicked and performs the corresponding operation
+
+// write operation into oper, we will use it later for output
+
+        switch(v.getId())
+
+        {
+
+            case R.id.Add:
+
+            oper = "+";
+
+            result = num1 + num2;
+
+            break;
+
+            case R.id.Sub:
+
+                oper = "-";
+
+                result = num1 - num2;
+
+                break;
+
+            case R.id.Mul:
+
+                oper = "*";
+
+                result = num1 * num2;
+
+                break;
+
+            case R.id.Div:
+
+                oper = "/";
+
+                result = num1 / num2;
+
+                break;
+
+            default:
+
+                break;
+
+        }
+
+// form the output line
+
+        Result.setText(num1 + " "+ oper + " "+ num2 + " = "+ result);
+
+    }
+
 }
