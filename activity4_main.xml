@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Details"
+        android:textSize="30sp"
+        android:layout_x="50dp"
+        android:layout_y="20dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Roll No:"
+        android:textSize="20sp"
+        android:layout_x="20dp"
+        android:layout_y="110dp"
+         />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EnterName:"
+        android:textSize="20sp"
+        android:layout_x="20dp"
+        android:layout_y="160dp"
+         />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Marks:"
+        android:textSize="20sp"
+        android:layout_x="20dp"
+        android:layout_y="210dp"
+         />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_x="175dp"
+        android:layout_y="100dp"
+        android:inputType="number"
+        android:textSize="20sp"
+        />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:layout_x="175dp"
+        android:layout_y="150dp"
+         />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_x="175dp"
+        android:layout_y="200dp"
+        android:inputType="number"
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Insert"
+        android:layout_x="25dp"
+        android:layout_y="300dp"
+        android:textSize="30dp"
+         />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="DELETE"
+        android:layout_x="200dp"
+        android:layout_y="300dp"
+        android:textSize="30dp"
+         />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="UPDATE"
+        android:layout_x="25dp"
+        android:layout_y="400dp"
+        android:textSize="30dp"
+         />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text=" VIEW "
+        android:textSize="30dp"
+        android:layout_x="200dp"
+        android:layout_y="400dp"
+       />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="VIEW ALL"
+        android:textSize="30dp"
+        android:layout_x="100dp"
+        android:layout_y="500dp" />
+
+</AbsoluteLayout>
